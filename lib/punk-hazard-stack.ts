@@ -20,7 +20,7 @@ export class PunkHazardStack extends cdk.Stack {
             assumedBy: new ServicePrincipal('lambda.amazonaws.com'),
         });
         punkHazardServiceLambdaRole.addManagedPolicy(ManagedPolicy.fromAwsManagedPolicyName('AmazonDynamoDBFullAccess'));
-        punkHazardServiceLambdaRole.addManagedPolicy(ManagedPolicy.fromAwsManagedPolicyName('AmazonDynamoDBFullAccess'));
+        punkHazardServiceLambdaRole.addManagedPolicy(ManagedPolicy.fromAwsManagedPolicyName('AWSLambdaBasicExecutionRole'));
 
         const environmentVariables = {
             POSTS_TABLE: punkHazardPostsTable.tableArn
